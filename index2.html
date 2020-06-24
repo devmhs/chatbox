@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <title>Live Camarote - Stream Player</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-167485672-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-167485672-1");
+    </script>
+
+    <style>
+      body {
+        background-color: #0e0e10;
+        color: #fff;
+      }
+      .video {
+        background-color: #000;
+        width: 100%;
+        max-height: 500px;
+        margin: 0;
+        padding: 0;
+        border-bottom: 2px solid #272728;
+      }
+
+      .col_message {
+      border-left: 2px solid #303032;
+      height: 100%;
+      }
+      .messages {
+        width: 100%;
+        font-size: 14px;
+        position: sticky;
+        height: 100%;
+        background-color: #18181b;
+      }
+
+      .messages-itens {
+        overflow-y: auto;
+        width: 300px;
+        height: 80%;
+        background-color:#fff;
+      }
+
+      .messages-form {
+        height: 100%;
+        width: 330px;
+        background-color:#3a3a3d;
+      }
+
+      .header-video {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark fixed-top"
+      style="border-bottom: 1px solid #070707; background-color: #18181b;"
+    >
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://beta.camarote.live/"
+              >Voltar ao site</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid pt-1" style="margin-top: 53px;">
+      <div class="row">
+        <div class="col-md-9 pl-0 pr-0 pm-1">
+          <video controls id="video" class="video"></video>
+          <br />
+          <div class="header-video">
+            <h5>Luis Lopes</h5>
+            <h6>Os 5 pilares do Relacionamento Interpessoal</h6>
+          </div>
+        </div>
+
+        <div class="col-md-3 pl-1 pr-0 col_message">
+          <div class="messages">
+            <div class="messages-itens">
+              <li>
+                teste dsadsaad d ds sd sd sddasdjakkjsdajsadkjkdaskjas
+                jkajksdjkadsjkadsjk
+              </li>
+            </div>
+
+                <div class="messages-form">
+                  saddsa
+                </div>
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div id="live-countdown"></div> -->
+
+    <!-- Optional JavaScript -->
+
+    <script>
+      var video = document.getElementById("video");
+      var playback_id = "hU6KTliCHoRNA3heoZu0278dNvc4AN2bHRKGgU7RANh4";
+      var videoSrc = "https://stream.mux.com/" + playback_id + ".m3u8";
+
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+          video.play();
+        });
+      } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+        video.src = videoSrc;
+        video.addEventListener("loadedmetadata", function () {
+          video.play();
+        });
+      }
+
+      $("#live-countdown").countdown("2020-11-10 08:00", function (event) {
+        $(this).text(
+          event.strftime(
+            event.offset.totalDays > 0
+              ? "Faltam %D dias %H:%M:%S"
+              : "Começa em %H:%M:%S"
+          )
+        );
+      });
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

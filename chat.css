@@ -1,0 +1,94 @@
+body {
+  padding-top: 56px;
+  background-color: #0e0e10;
+  color: #fff;
+}
+
+.sticky-offset {
+  top: 56px;
+}
+
+.mensagens {
+  overflow-x: auto;
+  height: 80vh;
+}
+
+.chat {
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-right: 4px;
+}
+
+.nome {
+  font-size: 13px;
+}
+
+.nome small {
+  color: #1c72c6;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.video {
+  background-color: #000;
+  width: 100%;
+  max-height: 500px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid #272728;
+}
+
+#body-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+#sidebar-container {
+  min-height: 100vh;
+  background-color: #18181b;
+  border-left: 2px solid #303032;
+  padding: 0;
+}
+
+/* Sidebar sizes when expanded and expanded */
+.sidebar-expanded {
+  width: 30px;
+}
+.sidebar-collapsed {
+  width: 60px;
+}
+
+/* Menu item*/
+#sidebar-container .list-group a {
+  height: 50px;
+  color: white;
+}
+
+/* Submenu item*/
+#sidebar-container .list-group .sidebar-submenu a {
+  height: 45px;
+  padding-left: 30px;
+}
+.sidebar-submenu {
+  font-size: 0.9rem;
+}
+
+/* Separators */
+.sidebar-separator-title {
+  background-color: #303032;
+  border: 0px;
+  margin: 0px;
+  height: 35px;
+  z-index: 100;
+}
+.sidebar-separator {
+  background-color: #303032;
+  border: 0px;
+  margin: 0px;
+  height: 25px;
+  z-index: 100;
+}
+.logo-separator {
+  background-color: #303032;
+  height: 60px;
+  z-index: 100;
+}
