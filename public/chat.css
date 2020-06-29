@@ -3,6 +3,43 @@ body {
     color: #fff;
 }
 
+#return-chat {
+    background-color: #fff;
+    position: fixed;
+    right: 12px;
+    cursor: pointer;
+    top: 30vh;
+    color: #1c72c6;
+    width: 45px;
+    padding: 7px;
+    text-align: center;
+    z-index: 9999;
+    border-radius: 12px;
+    opacity: 0.09;
+    transition: opacity 2s;
+}
+
+.recolher {
+    cursor: pointer;
+    color: #f5f5f5;
+    font-size: 11px;
+}
+
+.recolher:hover {
+    color: #1c72c6;
+    font-weight: bold;
+}
+
+#div_chat {}
+
+#div_video {
+    transition: width 2s;
+}
+
+#return-chat:hover {
+    opacity: 1;
+}
+
 .bg-chat {
     background-color: #18181b;
 }

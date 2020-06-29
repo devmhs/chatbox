@@ -20,14 +20,14 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167485672-1"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || []
 
         function gtag() {
-            dataLayer.push(arguments);
+            dataLayer.push(arguments)
         }
-        gtag("js", new Date());
+        gtag('js', new Date())
 
-        gtag("config", "UA-167485672-1");
+        gtag('config', 'UA-167485672-1')
     </script>
 </head>
 
@@ -47,7 +47,7 @@
     <div class="wrapper p-2">
         <div class="container-fluid mt-3">
             <div class="row">
-                <div class="col-md-9 p-1">
+                <div class="col-md-9 p-1" id="div_video">
                     <video controls id="video" class="video"></video>
                     <script type="text/javascript"></script>
                     <br />
@@ -59,11 +59,38 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 lateral">
+                <div id="return-chat" class="d-none" onclick="returnChat()">
+                    <i class="fa fa-commenting-o"></i>
+                </div>
+
+                <script type="text/javascript">
+                    function recolherChat() {
+                        var div_video = $('#div_video')
+                        var div_chat = $('#div_chat')
+                        var arrow = $('#return-chat')
+                        arrow.removeClass('d-none').addClass('')
+                        div_chat.removeClass('col-md-3 p-1 lateral').addClass('d-none')
+                        div_video.removeClass('col-md-9 p-1').addClass('col-md-12 p-1')
+                    }
+
+                    function returnChat() {
+                        var div_video = $('#div_video')
+                        var div_chat = $('#div_chat')
+                        var arrow = $('#return-chat')
+                        arrow.removeClass('').addClass('d-none')
+                        div_chat.removeClass('d-none').addClass('col-md-3 p-1 lateral')
+                        div_video.removeClass('col-md-12 p-1').addClass('col-md-9 p-1')
+                    }
+                </script>
+
+                <div class="col-md-3 p-1 lateral" id="div_chat">
                     <ul class="list-group chat bg-chat">
                         <!-- Separator with title -->
-                        <li class="sidebar-separator-title text-muted d-flex align-items-center title" style="text-align: center;">
-                            <small class="pl-1">CHAT DA TRANSMISSÃO</small>
+                        <li class="sidebar-separator-title text-muted d-flex align-items-center title text-center">
+                            <small class="pl-1 d-none d-sm-block recolher" onclick="recolherChat()" title="Clique para recolher o chat para a lateral da página.">FECHAR <i class="fa fa-arrow-right"></i> &nbsp;</small
+                >
+
+                <small class="pl-1">CHAT DA TRANSMISSÃO</small>
                         </li>
                         <!-- /END Separator -->
                         <!-- Menu with submenu -->
