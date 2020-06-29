@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/server.js"
+    "start": "nodemon src/server.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
